@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podcount
+  labels:
+    app: podcount
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: podcount
+  template:
+    metadata:
+      labels:
+        app: podcount
+    spec:
+      containers:
+      - name: podcount
+        image: vbhat2606/podcount31:latest
+        ports:
+        - containerPort: 80
